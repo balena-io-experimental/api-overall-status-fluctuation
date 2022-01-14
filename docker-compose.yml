@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  monitor:
+    build: ./monitor
+    image: mustachefish/balena-update-monitor
+    container_name: update-monitor
+    restart: on-failure
+    # Add device UUID and balenaCloud APIKEY variables to .env file
+    env_file: ./monitor/.env
