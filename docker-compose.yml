@@ -3,8 +3,8 @@ version: '3'
 services:
   monitor:
     build: ./monitor
-    image: mustachefish/balena-update-monitor
+    image: cywang117/balena-update-monitor
     container_name: update-monitor
     restart: on-failure
-    # Add device UUID and balenaCloud APIKEY variables to .env file
-    env_file: ./monitor/.env
+    # Device UUID and balenaCloud APIKEY variables need to be specified when running image
+    # docker-compose up, or docker run --rm --name update-monitor --env-file ./.env cywang117/balena-update-monitor
